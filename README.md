@@ -16,9 +16,13 @@
   *Steps required to install project and how to get the development environment running:*
 
   git clone https://github.com/AlexBlackeyed/GUI-Nmap.git
+  <br>
   cd GUI-Nmap
+  <br>
   sudo su
+  <br>
   pip3 install -r requirements.txt OR pip3 install ttkthemes
+  <br>
   python3 main.py
 
   ## License
