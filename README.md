@@ -5,8 +5,6 @@
 
   ## Description
 
-  *The what, why, and how:*
-
   A GUI Version of the most used nmap commands(BETA)
 
   ## Table of Contents
