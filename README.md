@@ -23,6 +23,8 @@
   <br>
   pip3 install -r requirements.txt OR pip3 install ttkthemes
   <br>
+  Move arc.tcl to \Python\tcl\tk8.6\ttk **Thanks to All People involved in https://github.com/TkinterEP**
+  <br>
   python3 main.py
 
   ## License
