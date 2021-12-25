@@ -4,7 +4,7 @@ from ttkthemes.themed_style import ThemedStyle
 import os
 root = tk.Tk()
 style = ThemedStyle()
-style.set_theme("yaru")
+style.set_theme("arc")
 root.title("GUI Nmap Based Port Scanner")
 root.geometry("800x600")
 notebook = ttk.Notebook(root)
