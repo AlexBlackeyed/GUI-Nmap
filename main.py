@@ -1,5 +1,6 @@
 import tkinter as tk
-from tkinter import StringVar, ttk
+from tkinter import READABLE, StringVar, ttk
+from tkinter.constants import DISABLED
 from ttkthemes.themed_style import ThemedStyle
 import os
 root = tk.Tk()
@@ -33,16 +34,16 @@ def create_frame1():
     port_label.grid(column=0,row=2)
     port_list.grid(column=1,row=2)
 def create_frame2():
-    global os_detection_value,syn_scan_value,speed_value,version_check_value,vuln_scan_value
+    global os_detection_value,syn_scan_value,speed_value,version_check_value,vuln_scan_value,speed_var,speed_choice
     options_label = ttk.Label(frame2,text="Options",font='bold')
     os_detection_value = StringVar()
     os_detection = ttk.Checkbutton(frame2,text="Os Detection",width=13,variable=os_detection_value)
     syn_scan_value = StringVar()
     syn_scan = ttk.Checkbutton(frame2,text="Syn Scan",width=13,variable=syn_scan_value)
-    speed = ttk.Checkbutton(frame2,text="Speed",width=13)
+    speed_var = StringVar()
+    speed = ttk.Checkbutton(frame2,text="Speed",width=13,variable=speed_var,command=speed_enable)
     speed_value = StringVar()
-    speed_choice = ttk.Spinbox(frame2,from_=1,to=5,textvariable=speed_value,width=2)
-    speed_choice.configure(state="readonly")
+    speed_choice = ttk.Spinbox(frame2,from_=1,to=5,textvariable=speed_value,width=2,state=DISABLED)
     version_check_value = StringVar()
     version_check = ttk.Checkbutton(frame2,text="Version Check",width=13,variable=version_check_value)
     vuln_scan_value = StringVar()
@@ -54,6 +55,9 @@ def create_frame2():
     version_check.grid(column=1,row=3)
     vuln_scan.grid(column=1,row=4)
     syn_scan.grid(column=1,row=5)
+def speed_enable():
+    if speed_var.get():
+        speed_choice.configure(state=READABLE)
 def create_frame3():
     global output_save
     frame3_label = ttk.Label(frame3,text="Start/Output")
